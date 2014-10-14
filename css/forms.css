@@ -1,0 +1,89 @@
+.services-form label{
+    position: relative;
+    top: -2px;
+    margin-left: 3px;
+}
+.services-form .inputs{
+    padding: 20px 20px 25px;
+    background-color: #eee;
+    border-bottom: 1px #ddd solid;
+}
+.services-form input[type="text"],
+.services-form input[type="password"],
+.services-form textarea{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border:1px solid #b7bfcf;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    padding: 8px 10px 8px;
+}
+.services-form .form-title{
+    font-size: 14px;
+    line-height: 1em;
+}
+.services-form .form-title a{
+    display: inline-block;
+    float: left;
+    width: 33.333%;
+    padding: 12px 0;
+    text-align: center;
+    background-color: #ebebeb;
+    border-bottom: 1px #ddd solid;
+    color: #464646;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+.services-form .form-title a:last-child{
+    float: none;
+}
+.services-form .form-title a:hover{
+    background-color: #eee;
+}
+.services-form .form-title a.active{
+    background-color: #0096ff;
+    border-bottom: 1px #0096ff solid;
+    color: #fff;
+}
+.services-form .title{
+    margin-bottom: 3px;
+}
+.services-form .free-checkers{
+    padding-top: 25px;
+}
+.services-form .lc{
+    float: left;
+    width: 48%;
+}
+.services-form .rc{
+    float: right;
+    width: 48%;
+}
+.services-form .rows,
+.services-form .rows{
+    margin-bottom: 15px;
+}
+.services-form .form-sections.h{
+    display: none;
+}
+.services-form .inline li{
+    display: inline-block;
+}
+.services-form .inline .datepicker input{
+    width: 80%;
+    margin: 0;
+}
+.services-form .mins-sep{
+    display: inline-block;
+    padding: 6px 1px;
+    font-size: 18px;
+    line-height: 1em;
+}
+.services-form .vert-set li{
+    margin-bottom: 5px;
+}
+.services-form .vert-set li:last-child{
+    margin-bottom: 0;
+}

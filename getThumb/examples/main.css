@@ -1,0 +1,107 @@
+body {
+	font-family: Arial, sans-serif;
+	font-size: 13px;
+	line-height: 18px; 
+}
+
+.container {
+	width: 980px;
+	margin: 0 auto;
+}
+	
+h2 {
+	padding: 5px 0 15px 0;
+	margin: 0; 
+}
+
+code {
+	display: block;
+	line-height: 16px;
+	padding: 10px;
+	background: rgb(240,240,240);
+	border: 1px solid rgb(169,169,169);
+	
+}
+
+.clear {
+	clear: both;
+}
+
+ul.nav {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	border-bottom: 1px solid #eee;
+	height: 25px;
+}
+
+
+
+ul.nav li.first {
+	margin: 0 3px 0 0;
+}
+
+ul.nav li {
+	float: left;
+	line-height: 24px;
+	display: block;
+	margin: 0 3px;
+}
+
+ul.nav li a.active {
+	background: #fff;
+	border-bottom: 1px solid #fff; 
+}
+
+ul.nav li a {
+	background: #eee; 
+	text-decoration: none;
+	font-weight: bold;
+	color: #888;
+	display: block;
+	padding: 0 10px;
+	border-top: 1px solid #eee; 
+	border-left: 1px solid #eee; 
+	border-right: 1px solid #eee;
+	border-bottom: 1px solid #eee; 
+}
+ul.nav li a:hover {
+	background: #fff;
+	border-bottom: 1px solid #fff; 
+}
+
+dl {
+	width: 960px;
+}
+dt {
+	float: left;
+	width: 150px;
+	border-bottom: 1px dotted #ddd;
+}
+dd {
+	float: left;
+	width: 810px;
+	margin: 0;
+	border-bottom: 1px dotted #ddd;
+}
+dl .first {
+	border-top: 1px dotted #ddd;
+}
+
+.table {
+	border-collapse: collapse;
+}
+
+.table td {
+	padding: 3px 30px 3px 0;
+	font-size: 13px;
+}
+
+
+.content {
+	padding: 10px;
+}
+
+.footer {
+	padding: 10px;
+}

@@ -1,0 +1,21 @@
+.customSelect {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background: url("img/select-box-bg.gif") repeat scroll right center rgba(0, 0, 0, 0);
+    border:1px solid #b7bfcf;
+    border-radius: 4px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+    padding: 6px 17px 6px 7px;
+}
+.customSelect.customSelectHover {
+    border-color: #aeb7c9;
+}
+#main #demo .customSelect.customSelectFocus {
+    border-color: #996633;
+}
+#main #demo .customSelect.customSelectOpen {
+    background: url("img/select-box-bg-on.gif") repeat scroll right center rgba(0, 0, 0, 0);
+    border-color: #5d5074;
+}

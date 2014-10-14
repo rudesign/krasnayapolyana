@@ -1,0 +1,464 @@
+<script language="javascript">
+
+
+    <?php class_exists('Core', false) or die();
+
+        switch(Core::$item['alias']){
+            default:
+                $servicesTormTab = 0;
+            break;
+            case 'transfer':
+                $servicesTormTab = 2;
+            break;
+        }
+
+        echo 'var servicesTormTab = '.$servicesTormTab.';';
+    ?>
+
+</script>
+
+<div class="services-form section">
+    <div class="form-title">
+        <a onclick="switchSections(0);" href="javascript:void(0);">Прокат авто</a>
+        <a onclick="switchSections(1);" href="javascript:void(0);">Аренда с водителем</a>
+        <a onclick="switchSections(2);" href="javascript:void(0);">Трансфер</a>
+    </div>
+
+    <div class="inputs">
+
+        <!-- section 0 -->
+        <div class="form-sections">
+            <form action="http://krasnayapolyana.org/" method="GET">
+                <!-- left column -->
+                <div class="lc">
+                    <div class="rows">
+                        <div class="title">&nbsp;</div>
+                        <select name="autoType" class="customSelect">
+                            <option value="">Я езжу на...</option>
+                            <option value="1">Opel</option>
+                            <option value="2">BMW</option>
+                            <option value="3">Mercedes</option>
+                        </select>
+                    </div>
+                    <div class="rows">
+                        <div class="title mini-section">
+                            Дополнительно:
+                        </div>
+                        <ul class="hidden-sections-switcher inline vert-set">
+                            <li><input type="checkbox" name="extra1" value="1" onClick="switchSFHiddenSections(0);" id="type1" /><label for="type1">прокат + отель</label> </li>
+                            <li><input type="checkbox" name="extra2" value="2" onClick="switchSFHiddenSections(0);" id="type2"><label for="type2">прокат + авиа</label></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- right column -->
+                <div class="rc">
+                    <div class="rows">
+                        <div class="title">Подача:</div>
+                        <ul class="inline">
+                            <li class="l w50 datepicker">
+                                <input name="autoCheckIn" type="text" class="date" />
+                            </li>
+                            <li class="r">
+                                <?php
+                                sfShowMinsSelector('autoCheckInMins');
+                                ?>
+                            </li>
+                            <li class="r mins-sep">:</li>
+                            <li class="r">
+                                <?php
+                                sfShowHoursSelector('autoCheckInHours');
+                                ?>
+                            </li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="rows">
+                        <div class="title">Возврат:</div>
+                        <ul class="inline">
+                            <li class="l w50 datepicker">
+                                <input name="autoCheckOut" type="text" class="date" />
+                            </li>
+                            <li class="r">
+                                <?php
+                                sfShowMinsSelector('autoCheckOutMins');
+                                ?>
+                            </li>
+                            <li class="r mins-sep">:</li>
+                            <li class="r">
+                                <?php
+                                sfShowHoursSelector('autoCheckOutHours');
+                                ?>
+                            </li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <!-- hidden section 0 -->
+                <div class="hidden-sections">
+                    <!-- hidden left column -->
+                    <div class="lc">
+                        <div class="rows">
+                            <div class="title">Курорт</div>
+                            <div class="clear"></div>
+                            <select name="resort" class="customSelect">
+                                <option value="">выберите...</option>
+                                <option value="1">Красная Поляна</option>
+                                <option value="2">Роза Хутор</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- hidden right column -->
+                    <div class="rc">
+                        <div class="title">Отель (не обязательно)</div>
+                        <input name="hotel" class="w100" type="text" />
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <!-- hidden section 1 -->
+                <div class="hidden-sections">
+                    <!-- hidden left column -->
+                    <div class="lc">
+                        <div class="rows">
+                            <div class="title">Перелет из:</div>
+                            <div class="clear"></div>
+                            <input name="aviaFrom" class="w100" type="text" />
+                        </div>
+                        <div class="rows">
+                            <div class="title">Перелет в:</div>
+                            <div class="clear"></div>
+                            <input name="aviaTo" class="w100" type="text" />
+                        </div>
+                    </div>
+                    <!-- hidden right column -->
+                    <div class="rc">
+                        <div class="rows">
+                            <div class="l w50 free-checkers">
+                                <input type="radio" value="1" name="oneway" onclick="toggleWayback(0);" /><label>туда</label>
+                            </div>
+                            <div class="r w50">
+                                <div class="title">Туда:</div>
+                                <div class="clear"></div>
+                                <div class="datepicker"><input name="aviaCheckIn" type="text" class="w100 date" /></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="rows">
+                            <div class="l w50 free-checkers">
+                                <input type="radio" value="0" name="oneway" onclick="toggleWayback(0);" checked /><label>туда и обратно</label>
+                            </div>
+                            <div class="r w50 wayback">
+                                <div class="title">Обратно:</div>
+                                <div class="clear"></div>
+                                <div class="datepicker"><input name="aviaCheckOut" type="text" class="w100 date" /></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="l"><input type="submit" class="buttons" value="Бронировать" /></div>
+                <div class="r"><a href="">Условия бронирования</a></div>
+                <div class="clear"></div>
+            </form>
+        </div>
+
+        <!-- section 1 -->
+        <div class="form-sections">
+            <form method="POST">
+                <input name="section" value="1" type="hidden" />
+                <!-- left column -->
+                <div class="lc">
+                    <div class="rows">
+                        <div class="title">&nbsp;</div>
+                        <select name="autoType" class="customSelect">
+                            <option value="">Я езжу на...</option>
+                            <option value="1">Opel</option>
+                            <option value="2">BMW</option>
+                            <option value="3">Mercedes</option>
+                        </select>
+                    </div>
+                    <div class="rows">
+                        <div class="title">E-mail:</div>
+                        <input type="text" name="email" class="w100" />
+                    </div>
+                    <div class="rows">
+                        <div class="title mini-section">
+                            Дополнительно:
+                        </div>
+                        <ul class="hidden-sections-switcher inline vert-set">
+                            <li><input type="checkbox" name="extra1" value="1" onClick="switchSFHiddenSections(1);" id="type11" /><label for="type11">прокат + отель</label> </li>
+                            <li><input type="checkbox" name="extra2" value="2" onClick="switchSFHiddenSections(1);" id="type12"><label for="type12">прокат + авиа</label></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- right column -->
+                <div class="rc">
+                    <div class="rows">
+                        <div class="title">Подача:</div>
+                        <ul class="inline">
+                            <li class="l w50 datepicker">
+                                <input name="autoCheckIn" type="text" class="date" />
+                            </li>
+                            <li class="r">
+                                <?php
+                                sfShowMinsSelector('autoCheckInMins');
+                                ?>
+                            </li>
+                            <li class="r mins-sep">:</li>
+                            <li class="r">
+                                <?php
+                                sfShowHoursSelector('autoCheckInHours');
+                                ?>
+                            </li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="rows">
+                        <div class="title">Возврат:</div>
+                        <ul class="inline">
+                            <li class="l w50 datepicker">
+                                <input name="autoCheckOut" type="text" class="date" />
+                            </li>
+                            <li class="r">
+                                <?php
+                                sfShowMinsSelector('autoCheckOutMins');
+                                ?>
+                            </li>
+                            <li class="r mins-sep">:</li>
+                            <li class="r">
+                                <?php
+                                sfShowHoursSelector('autoCheckOutHours');
+                                ?>
+                            </li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <!-- hidden section 0 -->
+                <div class="hidden-sections">
+                    <!-- hidden left column -->
+                    <div class="lc">
+                        <div class="rows">
+                            <div class="title">Курорт</div>
+                            <div class="clear"></div>
+                            <select name="resort" class="customSelect">
+                                <option value="">выберите...</option>
+                                <option value="1">Красная Поляна</option>
+                                <option value="2">Роза Хутор</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- hidden right column -->
+                    <div class="rc">
+                        <div class="title">Отель (не обязательно)</div>
+                        <input name="hotel" class="w100" type="text" />
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <!-- hidden section 1 -->
+                <div class="hidden-sections">
+                    <!-- hidden left column -->
+                    <div class="lc">
+                        <div class="rows">
+                            <div class="title">Перелет из:</div>
+                            <div class="clear"></div>
+                            <input name="aviaFrom" class="w100" type="text" />
+                        </div>
+                        <div class="rows">
+                            <div class="title">Перелет в:</div>
+                            <div class="clear"></div>
+                            <input name="aviaTo" class="w100" type="text" />
+                        </div>
+                    </div>
+                    <!-- hidden right column -->
+                    <div class="rc">
+                        <div class="rows">
+                            <div class="l w50 free-checkers">
+                                <input type="radio" value="1" name="oneway" onclick="toggleWayback(0);" /><label>туда</label>
+                            </div>
+                            <div class="r w50">
+                                <div class="title">Туда:</div>
+                                <div class="clear"></div>
+                                <div class="datepicker"><input name="aviaCheckIn" type="text" class="w100 date" /></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="rows">
+                            <div class="l w50 free-checkers">
+                                <input type="radio" value="0" name="oneway" onclick="toggleWayback(0);" checked /><label>туда и обратно</label>
+                            </div>
+                            <div class="r w50 wayback">
+                                <div class="title">Обратно:</div>
+                                <div class="clear"></div>
+                                <div class="datepicker"><input name="aviaCheckOut" type="text" class="w100 date" /></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="l"><input type="submit" class="buttons" value="Бронировать" onclick="return submitServicesForm(1);" /></div>
+                <div class="r"><a href="">Условия бронирования</a></div>
+                <div class="clear"></div>
+            </form>
+        </div>
+
+        <!-- section 2 -->
+        <div class="form-sections">
+            <form method="POST">
+                <input name="section" value="2" type="hidden" />
+                <!-- left column -->
+                <div class="lc">
+                    <div class="rows">
+                        <div class="title">Трансфер из:</div>
+                        <select name="transferFrom" class="customSelect">
+                            <option value="">выберите...</option>
+                            <option value="1">Красная Поляна</option>
+                            <option value="2">Роза Хутор</option>
+                        </select>
+                    </div>
+                    <div class="rows">
+                        <div class="title">E-mail:</div>
+                        <input type="text" name="email" class="w100" />
+                    </div>
+                    <div class="rows">
+                        <div class="title mini-section">
+                            Дополнительно:
+                        </div>
+                        <ul class="hidden-sections-switcher inline vert-set">
+                            <li><input type="checkbox" name="extra1" value="1" onClick="switchSFHiddenSections(2);" id="type21" /><label for="type21">прокат + отель</label> </li>
+                            <li><input type="checkbox" name="extra2" value="2" onClick="switchSFHiddenSections(2);" id="type22"><label for="type22">прокат + авиа</label></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- right column -->
+                <div class="rc">
+                    <div class="rows">
+                        <div class="title">Трансфер в:</div>
+                        <input type="text" name="transferTo" class="w100" />
+                    </div>
+                    <div class="rows">
+                        <div class="title">Возврат:</div>
+                        <ul class="inline">
+                            <li class="l w50 datepicker">
+                                <input name="transferCheckOut" type="text" class="date" />
+                            </li>
+                            <li class="r">
+                                <?php
+                                sfShowMinsSelector('transferCheckOutMins');
+                                ?>
+                            </li>
+                            <li class="r mins-sep">:</li>
+                            <li class="r">
+                                <?php
+                                sfShowHoursSelector('transferCheckOutHours');
+                                ?>
+                            </li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <!-- hidden section 0 -->
+                <div class="hidden-sections">
+                    <!-- hidden left column -->
+                    <div class="lc">
+                        <div class="rows">
+                            <div class="title">Курорт</div>
+                            <div class="clear"></div>
+                            <select name="resort" class="customSelect">
+                                <option value="">выберите...</option>
+                                <option value="1">Красная Поляна</option>
+                                <option value="2">Роза Хутор</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- hidden right column -->
+                    <div class="rc">
+                        <div class="title">Отель (не обязательно)</div>
+                        <input name="hotel" class="w100" type="text" />
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <!-- hidden section 1 -->
+                <div class="hidden-sections">
+                    <!-- hidden left column -->
+                    <div class="lc">
+                        <div class="rows">
+                            <div class="title">Перелет из:</div>
+                            <div class="clear"></div>
+                            <input name="aviaFrom" class="w100" type="text" />
+                        </div>
+                        <div class="rows">
+                            <div class="title">Перелет в:</div>
+                            <div class="clear"></div>
+                            <input name="aviaTo" class="w100" type="text" />
+                        </div>
+                    </div>
+                    <!-- hidden right column -->
+                    <div class="rc">
+                        <div class="rows">
+                            <div class="l w50 free-checkers">
+                                <input type="radio" value="1" name="oneway" onclick="toggleWayback(0);" /><label>туда</label>
+                            </div>
+                            <div class="r w50">
+                                <div class="title">Туда:</div>
+                                <div class="clear"></div>
+                                <div class="datepicker"><input name="aviaCheckIn" type="text" class="w100 date" /></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="rows">
+                            <div class="l w50 free-checkers">
+                                <input type="radio" value="0" name="oneway" onclick="toggleWayback(0);" checked /><label>туда и обратно</label>
+                            </div>
+                            <div class="r w50 wayback">
+                                <div class="title">Обратно:</div>
+                                <div class="clear"></div>
+                                <div class="datepicker"><input name="aviaCheckOut" type="text" class="w100 date" /></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="l"><input type="submit" class="buttons" value="Бронировать" onclick="return submitServicesForm(2);" /></div>
+                <div class="r"><a href="">Условия бронирования</a></div>
+                <div class="clear"></div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<?php
+    function sfShowHoursSelector($name = '')
+    {
+        if(!empty($name)) {
+            $selected = 10;
+
+            echo '<select name="' . $name . '" class="customSelect">';
+            for($i = 0; $i < 24; $i++) {
+                $v = $i < 10 ? '0'.$i : $i;
+                echo '<option value="'.$v.'"'.($i == $selected ? ' selected' : '').'>'.$v.'</option>';
+            }
+            echo '</select>';
+        }
+    }
+
+    function sfShowMinsSelector($name = '')
+    {
+        if(!empty($name)) {
+            echo '<select name="' . $name . '" class="customSelect">';
+            for($i = 0; $i < 60; $i+=10) {
+                $v = $i < 10 ? '0'.$i : $i;
+                echo '<option value="'.$v.'">'.$v.'</option>';
+            }
+            echo '</select>';
+        }
+    }
+?>

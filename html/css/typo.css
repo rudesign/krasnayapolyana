@@ -1,0 +1,169 @@
+/*@import url(http://fonts.googleapis.com/css?family=Roboto:100,300,400&subset=latin,cyrillic);*/
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../css/fonts/roboto400.woff) format('woff');
+}
+
+body, .normal{
+    font: 14px/1.3 "Roboto", Arial, sans-serif;
+    font-weight: 400;
+}
+
+.arial{ font-family: Arial, sans-serif; }
+
+body{
+    background-color: #fff;
+}
+
+h1, h2{
+    font-weight: 400;
+    color: #0096ff;
+}
+h1{
+    margin-bottom: 20px;
+    font-size: 24px;
+    line-height: 1.3em;
+}
+h2{
+    margin-bottom: 15px;
+    font-size: 20px;
+    line-height: 1.3em;
+}
+
+label{
+    position: relative;
+    line-height: 1em;
+}
+
+.small{
+    font-size: 12px;
+    line-height: 1.35em;
+}
+
+.extrasmall{
+    font-size: 10px;
+    line-height: 1.3em;
+}
+
+.medium{
+    font-size: 16px;
+    line-height: 1.3em;
+}
+
+.centered{
+    text-align: center;
+}
+
+b, strong, .b{
+    font-weight: 700;
+}
+
+i, .i, em{
+    font-style: italic;
+}
+
+body, .black, .black a{
+    color: #464646;
+}
+.extrablack, .extrablack a{
+    color: #000;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+a, .blue, .blue a{
+    color: #0096ff;
+}
+
+.ghost a{
+    text-decoration: none;
+    border-bottom: 1px dotted;
+}
+.ghost a:hover{
+    border-bottom: none;
+}
+
+abbr, .abbr{
+    text-decoration: none;
+    border-bottom: 1px dashed;
+}
+abbr:hover, .abbr:hover{
+    border: 0;
+}
+
+.white, .white a{
+    color: #fff;
+}
+.gray, .gray a{
+    color: #7b7b7b;
+}
+.orange, .orange a{
+    color: #ff9600;
+}
+.yellow, .yellow a{
+    color: #ffe06c;
+}
+.red, .red a{
+    color: #bd0c08;
+}
+
+.blue-bg{
+    background-color: #0096ff;
+}
+.orange-bg{
+    background-color: #ff6c00;
+}
+
+.nodecor a{ text-decoration:  none; }
+.revdecor a{ text-decoration:  none; }
+.revdecor a:hover{ text-decoration:  underline; }
+
+.shadow{
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow_: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input[type="radio"]{
+    margin: 0 0.5em;
+}
+select, input[type="text"], input[type="password"], textarea, .buttons{
+    display: block;
+    box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    font-size: 12px;
+    line-height: 1em;
+    border: 1px solid #afafaf;
+    background-color: #FFFFFF;
+    outline-style: none;
+    outline-width: medium;
+    vertical-align: middle;
+}
+select, input[type="text"], input[type="password"], textarea{
+    padding: 1px 5px;
+}
+.buttons{
+    display: inline-block;
+    padding: 8px 13px 9px;
+    border: none;
+    border-radius: 4px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+    white-space: nowrap;
+    line-height: 1em;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    background-color: #0096ff;
+    color: #FFFFFF;
+    transition: all 0.2s ease 0s;
+    cursor: pointer;
+}
+.buttons:hover{
+    background-color: #33abff;
+}
