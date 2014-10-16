@@ -34,7 +34,7 @@
                     <div class="rows">
                         <div class="title">&nbsp;</div>
                         <select name="autoType" class="customSelect">
-                            <option value="">Я езжу на...</option>
+                            <option value="">выберите авто...</option>
                             <option value="1">Opel</option>
                             <option value="2">BMW</option>
                             <option value="3">Mercedes</option>
@@ -173,7 +173,7 @@
                     <div class="rows">
                         <div class="title">&nbsp;</div>
                         <select name="autoType" class="customSelect">
-                            <option value="">Я езжу на...</option>
+                            <option value="">выберите авто...</option>
                             <option value="1">Opel</option>
                             <option value="2">BMW</option>
                             <option value="3">Mercedes</option>
