@@ -21,7 +21,7 @@ if(Core::$item){
 
         if(class_exists(Core::$item['class'])){
 
-            Chapters::$current['item'] = call_user_func(array(Core::$item['class'], 'getById'), Router::$originId);
+            Chapters::$current['item'] = call_user_func(array(Core::$item['class'], 'getById'), Router::$originId, 'alias');
 
             if(Chapters::$current['item']) replaceMeta(Chapters::$current['item']);
 

@@ -26,50 +26,8 @@ $(document).ready(function(){
     switchSections(0);
     switchSFHiddenSections(0);
 
-    initSkype();
 });
 
-function initSkype(){
-    Skype.ui({
-        "name": "call",
-        "element": "SkypeButton1",
-        "participants": ["tour-shop"]
-    });
-    var el = document.getElementById('SkypeButton1');
-    var skypeimg = $('img', el);
-    skypeimg[0].style.margin = '2px 0 0 0';
-    skypeimg[0].style.verticalAlign = 0;
-
-    Skype.ui({
-        "name": "call",
-        "element": "SkypeButton2",
-        "participants": ["moscow.tour"]
-    });
-    var el = document.getElementById('SkypeButton2');
-    var skypeimg = $('img', el);
-    skypeimg[0].style.margin = '2px 0 0 0';
-    skypeimg[0].style.verticalAlign = 0;
-
-    Skype.ui({
-        "name": "call",
-        "element": "BSkypeButton1",
-        "participants": ["tour-shop"]
-    });
-    var el = document.getElementById('BSkypeButton1');
-    var skypeimg = $('img', el);
-    skypeimg[0].style.margin = '2px 0 0 0';
-    skypeimg[0].style.verticalAlign = 0;
-
-    Skype.ui({
-        "name": "call",
-        "element": "BSkypeButton2",
-        "participants": ["moscow.tour"]
-    });
-    var el = document.getElementById('BSkypeButton2');
-    var skypeimg = $('img', el);
-    skypeimg[0].style.margin = '2px 0 0 0';
-    skypeimg[0].style.verticalAlign = 0;
-}
 
 function runCarousel(){
     $('.jcarousel').jcarousel();

@@ -27,7 +27,7 @@ try {
     ));
 
     Templates::$js = array_merge(Templates::$js, array(
-
+        //'http://www.skypeassets.com/i/scom/js/skype-uri.js'
     ));
 
     Templates::$bottomJs = array_merge(array(
@@ -39,7 +39,6 @@ try {
         APP_PATH.'/js/customSelect/jquery.customSelect.min.js',
         APP_PATH.'/js/fancybox/source/jquery.fancybox.pack.js',
         APP_PATH.'/js/common.js?v='.Settings::$data->version,
-        'http://www.skypeassets.com/i/scom/js/skype-uri.js'
     ));
 
     echo Templates::parse('baseWrapper');

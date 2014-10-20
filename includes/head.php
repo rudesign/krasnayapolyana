@@ -36,6 +36,7 @@ class Head{
 
     public static function placeJS($jsSet = array(), $atTheBottom = false){
 
+
         if(empty($jsSet)){
             $jsSet = $atTheBottom ? Templates::$bottomJs : Templates::$js;
         }

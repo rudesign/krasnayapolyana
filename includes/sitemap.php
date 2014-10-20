@@ -76,10 +76,10 @@ class Sitemap{
                 echo '
                 <ul>
                     <li>
-                        <a href="/resorts/'.$resort[0]['resortId'].'.html">'.$resort[0]['resortName'].'</a>
+                        <a href="/resorts/'.$resort[0]['resortAlias'].'.html">'.$resort[0]['resortName'].'</a>
                         <ul>';
                         foreach($resort as $hotel){
-                            $uri = '/hotels/'.$hotel['id'].'.html';
+                            $uri = '/hotels/'.$hotel['alias'].'.html';
                             echo '<li><a href="'.$uri.'">'.$hotel['name'].'</a></li>';
                         }
                         echo '</ul>

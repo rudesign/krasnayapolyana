@@ -18,7 +18,7 @@ if($set = Resorts::getWithHotels()){
             if((reset(Router::$request->parsed->origin) == 'resorts') && (Chapters::$current['item']['id'] == $resortId)) $active = true;
             echo '<ul'.($active ? '' : ' class="h"').'>';
                 foreach($rows as $row){
-                    $uri = '/hotels/'.$row['id'].'.html';
+                    $uri = '/hotels/'.$row['alias'].'.html';
                     echo '<li'.(Chapters::$current['item']['id'] == $row['id'] ? ' class="active"' : '').'><a href="'.$uri.'">'.$row['name'].'</a></li>';
                 }
             echo '</ul>

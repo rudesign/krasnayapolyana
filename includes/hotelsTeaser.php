@@ -7,7 +7,7 @@ if($set = Hotels::getByRating()){
     echo '<div class="tr">';
 
     foreach($set as $rating=>$rows){
-        $uri = '/resorts/'.$rows[0]['resortId'].'.html';
+        $uri = '/resorts/'.$rows[0]['resortAlias'].'.html';
 
         echo '
         <div class="items item'.$i.'">
@@ -17,7 +17,7 @@ if($set = Hotels::getByRating()){
             echo '</div>
             <ul>';
             foreach($rows as $index=>$row){
-                $uri = '/hotels/'.$row['id'].'.html';
+                $uri = '/hotels/'.$row['alias'].'.html';
                 echo '<li><a href="'.$uri.'">'.$row['name'].'</a></li>';
                 if($index > 1) break;
             }

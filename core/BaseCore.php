@@ -28,11 +28,10 @@ class BaseCore extends Db{
         Chapters::getCurrent();
 
         Core::getItem();
-
     }
 
     private function setTimezone(){
-        $timezone = 'Europe/London';
+        $timezone = 'Europe/Moscow';
 
         ini_set('date.timezone', $timezone);
         date_default_timezone_set($timezone);

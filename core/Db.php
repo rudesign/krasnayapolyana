@@ -60,6 +60,16 @@ class Db extends Settings{
         }
     }
 
+    public static function getByAlias($id = 0, $key = ''){
+        try{
+            if(!self::set()) throw new Error();
+
+            return parent::getById($id, $key);
+        }catch (Error $e){
+            return array();
+        }
+    }
+
     public static function setConnection($newLink = false){
 
         // check if connection data defined

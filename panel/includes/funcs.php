@@ -133,7 +133,7 @@ function encodeHTMLEntities($string = ''){
 
 function decodeHTMLEntities($string = ''){
     if(!empty($string)){
-        $string = html_entity_decode($string, ENT_QUOTES, 'utf-8');
+        $string = str_replace('&quot;', '"', $string);
         $string = str_replace('&apos;', "'", $string);
     }
 
@@ -840,5 +840,18 @@ function deleteGallery($gallery = '', $dirSettings = array()){
     }
 
     return true;
+}
+
+function makeAlias($alias = '')
+{
+    $alias = decodeHTMLEntities($alias);
+
+    $alias = changeCase(transliterate($alias));
+
+    $deprecated = array('"', "'", '?', '&', '!', '#', '%', '*', '@', '$', '^', '(', ')');
+
+    $alias = str_replace($deprecated, array(), $alias);
+
+    return $alias;
 }
 ?>

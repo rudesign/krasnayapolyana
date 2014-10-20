@@ -33,7 +33,7 @@ class Resorts extends Db{
             $query = Hotels::set();
             $query->join = 'resorts';
             $query->compare = 'hotels.resort = resorts.id';
-            $query->fields = 'hotels.id, hotels.name, resorts.id as resortId, resorts.name as resortName';
+            $query->fields = 'hotels.id, hotels.name, hotels.alias, resorts.id as resortId, resorts.name as resortName, resorts.alias as resortAlias';
             $query->order = 'resorts.ord';
             if($limit) $query->limit = $limit;
 

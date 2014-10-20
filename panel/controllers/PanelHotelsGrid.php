@@ -57,6 +57,8 @@ class PanelHotelsGrid extends PanelGrid{
             <dt><input name="metaDescription" value="'.Core::$item['metaDescription'].'" type="text" class="fw" /></dt>
             <dl>Meta Keywords</dl>
             <dt><input name="metaKeywords" value="'.Core::$item['metaKeywords'].'" type="text" class="fw" /></dt>
+            <dl>Alias (оставьте пустым если несущественно)</dl>
+            <dt><input name="alias" value="'.Core::$item['alias'].'" type="text" class="hw" /></dt>
             <dl>Дата публикации</dl>
             <dt>'.showDateSelector(Core::$item['pubTime'], '_').'</dt>
 
@@ -94,6 +96,7 @@ class PanelHotelsGrid extends PanelGrid{
 
     public function getAdditionalData(){
         return array_merge(array(
+            'alias'=>($_POST['alias'] ? $_POST['alias'] : makeAlias($_POST['name'])),
             'searchIndex'=>changeCase(strip_tags($_POST['name'].' '.$_POST['body'])),
             'features'=>implode(',', $_POST['_features']),
         ), parent::getAdditionalData());

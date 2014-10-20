@@ -31,7 +31,7 @@ class Hotels extends Db{
     public static function getByRating($limit = 0){
         try{
             $query = self::set();
-            $query->fields = 'id, name, rating';
+            $query->fields = 'id, name, alias, rating';
             if($limit) $query->limit = $limit;
 
             if(!$rows = self::get($query, array('key'=>'rating'))) throw new Error;

@@ -16,7 +16,7 @@ if($set = Hotels::getByRating()){
             echo '
             <ul'.(Chapters::$current['resort']['rating'] == $rating ? '' : ' class="h"').'>';
             foreach($rows as $row){
-                $uri = '/hotels/'.$row['id'].'.html';
+                $uri = '/hotels/'.$row['alias'].'.html';
                 echo '<li'.(Chapters::$current['item']['id'] == $row['id'] ? ' class="active"' : '').'><a href="'.$uri.'">'.$row['name'].'</a></li>';
             }
             echo '
