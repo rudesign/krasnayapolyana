@@ -18,25 +18,39 @@ class Ajaj{
     }
 
     private function execute(){
-        $body = array();
-        $body[] = '<b>Тема:</b> Позвоните мне';
-        $body[] = '<b>Имя:</b> '.$_POST['name'];
-        $body[] = '<b>Номер телефона:</b> '.$_POST['phone'];
 
-        $body = implode('<br />', $body);
+        $data = array();
 
-        $data = array(
-            'name'=>$_POST['name'],
-            'body'=>$body,
-        );
+        $data[] = array('name'=>'Тема', 'value'=>'Просьба позвонить');
+        if(!empty($_POST['peopleTotal'])) $data[] = array('name'=>'Имя', 'value'=>$_POST['name']);
+        if(!empty($_POST['peopleTotal'])) $data[] = array('name'=>'Номер телефона', 'value'=>$_POST['phone']);
 
-        if(!Feedback::create($data)) throw new Error('Ошибка при записи сообщения');
+        // store
+        if(Feedback::submitRemote($data)){
+            $this->data['okMessage'] = 'Заявка отправлена';
+        }else{
+            throw new Error('Ошибка при отправке заявки');
+        }
 
-        $theme = $_POST['name'].' отправил(а) сообщение с сайта '.Core::$params['name'];
-
-        if(!sendAuthEmail(Core::$params['email'], $theme, $body)) throw new Error('Ошибка при отправке сообщения');
-
-        $this->data['okMessage'] = 'Заявка отправлена';
+//        $body = array();
+//        $body[] = '<b>Тема:</b> Позвоните мне';
+//        $body[] = '<b>Имя:</b> '.$_POST['name'];
+//        $body[] = '<b>Номер телефона:</b> '.$_POST['phone'];
+//
+//        $body = implode('<br />', $body);
+//
+//        $data = array(
+//            'name'=>$_POST['name'],
+//            'body'=>$body,
+//        );
+//
+//        if(!Feedback::create($data)) throw new Error('Ошибка при записи сообщения');
+//
+//        $theme = $_POST['name'].' отправил(а) сообщение с сайта '.Core::$params['name'];
+//
+//        if(!sendAuthEmail(Core::$params['email'], $theme, $body)) throw new Error('Ошибка при отправке сообщения');
+//
+//        $this->data['okMessage'] = 'Заявка отправлена';
     }
 
     private function check(){
