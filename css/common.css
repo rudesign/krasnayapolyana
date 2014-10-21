@@ -292,12 +292,12 @@ select, input[type="text"], input[type="password"], textarea {
   vertical-align: middle; }
 
 .booking-form .cell:first-child {
-  width: 315px;
+  width: 300px;
   padding-right: 15px;
   text-align: right; }
 
 .booking-form .cell:last-child {
-  width: 200px; }
+  width: 280px; }
 
 .booking-form .cell.vat {
   vertical-align: top; }
@@ -766,6 +766,18 @@ body {
   padding-left: 15px;
   border-left: 3px #0096ff solid;
   line-height: 1.1em; }
+  .content-h .button-booking {
+    padding: 10px 15px;
+    white-space: nowrap;
+    border-bottom: 2px #db7200 solid;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #ff8400;
+    cursor: pointer;
+    transition: 0.2s; }
+    .content-h .button-booking:hover {
+      background-color: #ff901a; }
 
 .content-h h1 {
   margin-bottom: 10px; }

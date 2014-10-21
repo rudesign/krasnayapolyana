@@ -7,7 +7,10 @@
     border-radius: 4px;
         -moz-border-radius: 4px;
         -webkit-border-radius: 4px;
-    padding: 6px 17px 6px 7px;
+    padding: 6px 38px 6px 7px;
+}
+.customSelect .customSelectInner{
+    white-space: nowrap;
 }
 .customSelect.customSelectHover {
     border-color: #aeb7c9;

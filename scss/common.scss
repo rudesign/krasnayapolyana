@@ -523,6 +523,20 @@ body{
   padding-left: 15px;
   border-left: 3px #0096ff solid;
   line-height: 1.1em;
+  .button-booking{
+    padding: 10px 15px;
+    white-space: nowrap;
+    border-bottom: 2px darken($orange, 7%) solid;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $white;
+    background-color: $orange;
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover{
+      background-color: lighten($orange, 5%);
+    }
+  }
 }
 .content-h h1{
   margin-bottom: 10px;

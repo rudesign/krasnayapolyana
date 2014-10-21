@@ -13,10 +13,10 @@ echo '
                     <div class="cell">Отель:</div>
                     <div class="cell">
                         <select name="hotel" class="w100 customSelect">
-                            <option value=""></option>';
+                            <option value="0">Не имеет значения</option>';
                             foreach($hotels as $row){
                                 echo '
-                                <option value="'.$row['id'].'">'.$row['name'].'</option>';
+                                <option value="'.$row['id'].'"'.($_GET['hotel'] == $row['id'] ? ' selected' : '').'>'.$row['name'].'</option>';
                             }
                             echo '
                         </select>
