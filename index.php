@@ -23,7 +23,6 @@ try {
         APP_PATH.'/js/customSelect/style.css',
         APP_PATH.'/js/fancybox/source/jquery.fancybox.css',
         APP_PATH.'/css/common.css?v='.Settings::$data->version,
-        APP_PATH.'/css/forms.css?v='.Settings::$data->version,
     ));
 
     Templates::$js = array_merge(Templates::$js, array(

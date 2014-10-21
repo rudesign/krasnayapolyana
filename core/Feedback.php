@@ -61,7 +61,7 @@ class Feedback extends Db{
                 foreach($data as $i=>$item){
                     if(is_array($item)){
                         foreach($item as $k=>$value){
-                            $data[$i][$k] = iconv('utf8', 'cp1251', $value);
+                            $data[$i][$k] = iconv('utf8', 'cp1251', decodeHTMLEntities($value));
 
                         }
                         $data[$i]['line'] = $line;
@@ -89,7 +89,7 @@ class Feedback extends Db{
 
             while (!feof($fp)) {
                 $str = fgets($fp, 1000);
-                echo $str.'<br />';
+                //echo $str.'<br />';
                 if (preg_match("/siteorder_id=([[:digit:]]+)/i", $str, $F)) $s_id = $F[1];
             }
 
@@ -97,7 +97,7 @@ class Feedback extends Db{
 
             return $s_id;
         }catch (Error $e){
-            echo 'Error at line '.$e->getLine();
+            //echo 'Error at line '.$e->getLine();
             return false;
         }
     }

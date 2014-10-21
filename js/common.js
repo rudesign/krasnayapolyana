@@ -208,3 +208,30 @@ function submitServicesForm(sectionIndex)
 
     return false;
 }
+
+function submitBookingForm()
+{
+    var container = $('.booking-form');
+
+    if(container.length) {
+        var form = container.find('form');
+
+        var options = {
+            success: function (response) {
+                if (response.message) {
+                    alert(response.message);
+                } else if (response.uri) {
+                    document.location.assign(response.uri);
+                } else {
+
+                }
+            },
+            url: '/ajaj/submitBookingForm.php',
+            dataType: 'json'
+        };
+
+        form.ajaxSubmit(options);
+    }
+
+    return false;
+}
