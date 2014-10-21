@@ -7,7 +7,7 @@ $(document).ready(function(){
         showOn: "button",
         buttonImage: "/img/datepicker.png",
         buttonImageOnly: true,
-        dateFormat: "mm.dd.y"
+        dateFormat: "dd.mm.y"
     });
 
     //$('select.selectbox').selectbox();
