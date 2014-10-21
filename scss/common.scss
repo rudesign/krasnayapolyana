@@ -168,18 +168,14 @@ body{
   }
   .inline-icons{
     .skype{
-      background-image: none;
-      img{
-        position: absolute;
-        z-index: 100;
-      }
+      position: absolute;
+      z-index: 100;
     }
-    span.skype-addr{
-      padding-left: 19px;
+    .skype-addr{
+      margin-left: 23px;
     }
   }
 }
-
 
 .through-teaser{
   position: relative;
@@ -781,11 +777,6 @@ body{
 .footer .inline-icons i{
   background-image: url("../img/imIcons.png");
 }
-.footer .inline-icons i.skype {
-  background: none;
-  overflow: hidden;
-  width: 15px;
-}
 /* ----------------------------- */
 
 
@@ -837,8 +828,3 @@ body{
   width: 597px;
   margin: 0 auto;
 }
-
-//.skype img{
-//  margin: 2px 0 0!important;
-//  vert-align: 0!important;
-//}

@@ -445,12 +445,10 @@ body {
     .header .l li :last-child, .header .r li :last-child {
       margin-bottom: 0; }
   .header .inline-icons .skype {
-    background-image: none; }
-    .header .inline-icons .skype img {
-      position: absolute;
-      z-index: 100; }
-  .header .inline-icons span.skype-addr {
-    padding-left: 19px; }
+    position: absolute;
+    z-index: 100; }
+  .header .inline-icons .skype-addr {
+    margin-left: 23px; }
 
 .through-teaser {
   position: relative;
@@ -1044,11 +1042,6 @@ body {
 
 .footer .inline-icons i {
   background-image: url("../img/imIcons.png"); }
-
-.footer .inline-icons i.skype {
-  background: none;
-  overflow: hidden;
-  width: 15px; }
 
 /* ----------------------------- */
 .chapters-menu {

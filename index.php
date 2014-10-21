@@ -26,7 +26,7 @@ try {
     ));
 
     Templates::$js = array_merge(Templates::$js, array(
-        //'http://www.skypeassets.com/i/scom/js/skype-uri.js'
+        'http://www.skypeassets.com/i/scom/js/skype-uri.js'
     ));
 
     Templates::$bottomJs = array_merge(array(
