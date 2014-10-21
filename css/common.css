@@ -406,12 +406,8 @@ body {
   height: 19px;
   margin-right: 3px;
   background-image: url("../img/im.png"); }
-  .inline-icons i .skype {
-    background: none;
+  .inline-icons i.skype {
     background-position: -19px 0; }
-    .inline-icons i .skype img {
-      position: absolute;
-      z-index: 100; }
 .inline-icons span {
   display: inline-block;
   float: left;

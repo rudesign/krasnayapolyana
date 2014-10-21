@@ -70,7 +70,7 @@ class HotelsGrid extends Grid{
 
     public function showGridItem($row = array()){
 
-        $uri = '/hotels/'.$row['id'].'.html';
+        $uri = '/hotels/'.$row['alias'].'.html';
 
         $thumbnail = getThumbnail($row['gallery'], $row['pubTime']);
 

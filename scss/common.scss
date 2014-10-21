@@ -115,14 +115,8 @@ body{
     margin-right: 3px;
     background-image: url("../img/im.png");
 
-    .skype {
-      background: none;
+    &.skype {
       background-position: -19px 0;
-
-      img {
-        position: absolute;
-        z-index: 100;
-      }
     }
   }
   span{
