@@ -41,8 +41,8 @@
                             Дополнительно:
                         </div>
                         <ul class="hidden-sections-switcher inline vert-set">
-                            <li><input type="checkbox" name="extra1" value="1" onClick="switchSFHiddenSections(0);" id="type1" /><label for="type1">прокат + отель</label> </li>
-                            <li><input type="checkbox" name="extra2" value="2" onClick="switchSFHiddenSections(0);" id="type2"><label for="type2">прокат + авиа</label></li>
+                            <li><input type="checkbox" name="extra1" value="1" onClick="switchSFHiddenSections(0);" id="type1" /><label for="type1">+ отель</label> </li>
+                            <li><input type="checkbox" name="extra2" value="2" onClick="switchSFHiddenSections(0);" id="type2"><label for="type2">+ авиа</label></li>
                         </ul>
                     </div>
                 </div>
@@ -179,8 +179,8 @@
                             Дополнительно:
                         </div>
                         <ul class="hidden-sections-switcher inline vert-set">
-                            <li><input type="checkbox" name="extra1" value="1" onClick="switchSFHiddenSections(1);" id="type11" /><label for="type11">прокат + отель</label> </li>
-                            <li><input type="checkbox" name="extra2" value="2" onClick="switchSFHiddenSections(1);" id="type12"><label for="type12">прокат + авиа</label></li>
+                            <li><input type="checkbox" name="extra1" value="1" onClick="switchSFHiddenSections(1);" id="type11" /><label for="type11">+ отель</label> </li>
+                            <li><input type="checkbox" name="extra2" value="2" onClick="switchSFHiddenSections(1);" id="type12"><label for="type12">+ авиа</label></li>
                         </ul>
                     </div>
                 </div>
@@ -190,17 +190,17 @@
                         <div class="title">Подача:</div>
                         <ul class="inline">
                             <li class="l datepicker" style="width: 42%;">
-                                <input name="autoCheckIn" type="text" class="date" />
+                                <input name="value3" type="text" class="date" />
                             </li>
                             <li class="r">
                                 <?php
-                                sfShowMinsSelector('autoCheckInMins');
+                                sfShowMinsSelector('minute3');
                                 ?>
                             </li>
                             <li class="r mins-sep">:</li>
                             <li class="r">
                                 <?php
-                                sfShowHoursSelector('autoCheckInHours');
+                                sfShowHoursSelector('hour3');
                                 ?>
                             </li>
                         </ul>
@@ -210,17 +210,17 @@
                         <div class="title">Возврат:</div>
                         <ul class="inline">
                             <li class="l datepicker" style="width: 42%;">
-                                <input name="autoCheckOut" type="text" class="date" />
+                                <input name="value4" type="text" class="date" />
                             </li>
                             <li class="r">
                                 <?php
-                                sfShowMinsSelector('autoCheckOutMins');
+                                sfShowMinsSelector('minute4');
                                 ?>
                             </li>
                             <li class="r mins-sep">:</li>
                             <li class="r">
                                 <?php
-                                sfShowHoursSelector('autoCheckOutHours');
+                                sfShowHoursSelector('hour4');
                                 ?>
                             </li>
                         </ul>
@@ -328,17 +328,17 @@
                             <div class="title">Отправление:</div>
                             <ul class="inline">
                                 <li class="l w50 datepicker" style="width: 42%;">
-                                    <input name="transferCheckOut" type="text" class="date" />
+                                    <input name="value3" type="text" class="date" />
                                 </li>
                                 <li class="r">
                                     <?php
-                                    sfShowMinsSelector('transferCheckOutMins');
+                                    sfShowMinsSelector('minute3');
                                     ?>
                                 </li>
                                 <li class="r mins-sep">:</li>
                                 <li class="r">
                                     <?php
-                                    sfShowHoursSelector('transferCheckOutHours');
+                                    sfShowHoursSelector('hour3');
                                     ?>
                                 </li>
                             </ul>
@@ -351,29 +351,29 @@
                     <div class="lc">
                         <div class="rows">
                             <div class="title">Трансфер из:</div>
-                            <?php showResortsSelector('transferFrom'); ?>
+                            <?php showResortsSelector('transferFromBack'); ?>
                         </div>
                     </div>
                     <div class="rc">
                         <div class="rows">
                             <div class="title">Трансфер в:</div>
-                            <input type="text" name="transferTo" class="w100" />
+                            <input type="text" name="transferToBack" class="w100" />
                         </div>
                         <div class="rows">
                             <div class="title">Отправление:</div>
                             <ul class="inline">
                                 <li class="l datepicker" style="width: 42%;">
-                                    <input name="transferCheckOut" type="text" class="date" />
+                                    <input name="value4" type="text" class="date" />
                                 </li>
                                 <li class="r">
                                     <?php
-                                    sfShowMinsSelector('transferCheckOutMins');
+                                    sfShowMinsSelector('minute4');
                                     ?>
                                 </li>
                                 <li class="r mins-sep">:</li>
                                 <li class="r">
                                     <?php
-                                    sfShowHoursSelector('transferCheckOutHours');
+                                    sfShowHoursSelector('hour4');
                                     ?>
                                 </li>
                             </ul>
@@ -503,17 +503,16 @@
 
     function showAutoSelector( $name = 'value_2' )
     {
-        echo '
-        <select name="'.$name.'" class="customSelect">
-            <option value="0">выберите...</option>
-            <option value="52">Daewoo Matiz</option>
-            <option value="18">Chevrolet Spark</option>
-            <option value="53">Chevrolet Aveo Hatchback</option>
-            <option value="56">Chevrolet Aveo Sedan</option>
-            <option value="54">Chevrolet Cruze</option>
-            <option value="55">Chevrolet Captiva</option>
-        </select>
-        ';
+        $query = Autos::set();
+        if($rows = Autos::get($query)){
+            echo '
+            <select name="'.$name.'" class="customSelect">
+                <option value="0">выберите...</option>';
+                foreach($rows as $row){
+                    echo '<option value="'.$row['remoteId'].'">'.$row['name'].'</option>';
+                }
+            echo '</select>';
+        }
     }
 
     function showResortsSelector( $name = 'resort' )
@@ -524,7 +523,7 @@
 
         if($rows = Resorts::get($query)) {
             echo '
-            <select name="resort" class="customSelect">
+            <select name="'.$name.'" class="customSelect">
                 <option value="">выберите...</option>';
                 foreach($rows as $row) {
                     echo '<option value="'.$row['id'].'">'.$row['name'].'</option>';
