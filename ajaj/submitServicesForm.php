@@ -112,16 +112,7 @@ class Ajaj{
                 if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) throw new Error('Укажите реальный e-mail');
                 if(empty($_POST['value3'])) throw new Error('Укажите дату подачи');
                 if(empty($_POST['value4'])) throw new Error('Укажите дату возврата');
-
-                if(!empty($_POST['extra1'])){
-                    if(empty($_POST['resort'])) throw new Error('Выберите курорт');
-                }
-                if(!empty($_POST['extra2'])){
-                    if(empty($_POST['aviaFrom'])) throw new Error('Укажите пункт вылета');
-                    if(empty($_POST['aviaTo'])) throw new Error('Укажите пункт назначения');
-                    if(empty($_POST['aviaCheckIn'])) throw new Error('Укажите дату вылета');
-                    if(!empty($_POST['wayback']) && empty($_POST['aviaCheckOut'])) throw new Error('Укажите дату возврата');
-                }
+                
             break;
             case 2:
                 if(empty($_POST['transferFrom'])) throw new Error('Укажите место отправления');
@@ -129,16 +120,17 @@ class Ajaj{
                 if(empty($_POST['email'])) throw new Error('Укажите e-mail');
                 if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) throw new Error('Укажите реальный e-mail');
 
-                if(!empty($_POST['extra1'])){
-                    if(empty($_POST['resort'])) throw new Error('Выберите курорт');
-                }
-                if(!empty($_POST['extra2'])){
-                    if(empty($_POST['aviaFrom'])) throw new Error('Укажите пункт вылета');
-                    if(empty($_POST['aviaTo'])) throw new Error('Укажите пункт назначения');
-                    if(empty($_POST['aviaCheckIn'])) throw new Error('Укажите дату вылета');
-                    if(!empty($_POST['wayback']) && empty($_POST['aviaCheckOut'])) throw new Error('Укажите дату возврата');
-                }
             break;
+        }
+
+        if(!empty($_POST['extra1'])){
+            if(empty($_POST['resort'])) throw new Error('Выберите курорт');
+        }
+        if(!empty($_POST['extra2'])){
+            if(empty($_POST['aviaFrom'])) throw new Error('Укажите пункт вылета');
+            if(empty($_POST['aviaTo'])) throw new Error('Укажите пункт назначения');
+            if(empty($_POST['aviaCheckIn'])) throw new Error('Укажите дату вылета');
+            if(!empty($_POST['wayback']) && empty($_POST['aviaCheckOut'])) throw new Error('Укажите дату возврата');
         }
 
         //if(!Captcha::check($_POST['code'], $_POST['entered'])) throw new Error('Повторите символы');
