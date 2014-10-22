@@ -29,6 +29,7 @@
         <!-- section 0 -->
         <div class="form-sections">
             <form action="http://ru.rentacarsochi.com/order/" method="POST">
+                <input type="hidden" value="short" name="mode">
                 <input type="hidden" value="1" name="type">
                 <!-- left column -->
                 <div class="lc">

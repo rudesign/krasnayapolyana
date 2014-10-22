@@ -98,8 +98,8 @@ class Ajaj{
         switch($_POST['section']){
             case 0:
                 if(empty($_POST['extra1']) && empty($_POST['extra2'])){
-                    //$this->data['submit'] = 1;
-                    //throw new Error;
+                    $this->data['submit'] = 1;
+                    throw new Error;
                 }
                 if(empty($_POST['value_2'])) throw new Error('Выберите авто');
             break;
