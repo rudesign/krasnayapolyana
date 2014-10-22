@@ -185,6 +185,15 @@ select, input[type="text"], input[type="password"], textarea {
 .buttons:hover {
   background-color: #33abff; }
 
+.datepicker {
+  position: relative; }
+
+.datepicker img {
+  position: absolute;
+  z-index: 1;
+  top: 7px;
+  right: 7px; }
+
 .services-form label {
   position: relative;
   top: -2px;
@@ -262,8 +271,8 @@ select, input[type="text"], input[type="password"], textarea {
 .services-form .inline li {
   display: inline-block; }
 
-.services-form .inline .datepicker input {
-  width: 80%;
+.services-form .datepicker input {
+  width: 100%;
   margin: 0; }
 
 .services-form .mins-sep {
@@ -991,15 +1000,6 @@ body {
 .photo-gallery-teaser .name {
   font-size: 24px;
   line-height: 1.1em; }
-
-.datepicker {
-  position: relative; }
-
-.datepicker img {
-  position: absolute;
-  z-index: 1;
-  top: 7px;
-  right: 7px; }
 
 .footer {
   display: table;

@@ -25,6 +25,7 @@ $(document).ready(function(){
 
     switchSections(0);
     switchSFHiddenSections(0);
+    $('.returnTransfer').hide();
 
 });
 
@@ -161,6 +162,20 @@ function toggleWayback(sectionIndex){
     }
 }
 
+function toggleReturn(sectionIndex) {
+    var container = $('.services-form');
+    var section = container.find('.form-sections').eq(sectionIndex);
+    var returnTransfer = section.find('.returnTransfer');
+    var returnBack = section.find('input[name=returnTransfer]:checked').val();
+
+    if(returnBack > 0) {
+        returnTransfer.hide();
+    }else{
+        returnTransfer.show();
+    }
+}
+
+
 function switchSections(sectionIndex)
 {
     var container = $('.services-form');
@@ -195,8 +210,8 @@ function submitServicesForm(sectionIndex)
                     alert(response.message);
                 } else if (response.uri) {
                     document.location.assign(response.uri);
-                } else {
-
+                } else if (response.submit ){
+                    form.submit();
                 }
             },
             url: '/ajaj/submitServicesForm.php',

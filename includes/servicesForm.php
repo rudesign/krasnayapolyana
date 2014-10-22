@@ -28,17 +28,13 @@
 
         <!-- section 0 -->
         <div class="form-sections">
-            <form action="http://krasnayapolyana.org/" method="GET">
+            <form action="http://ru.rentacarsochi.com/order/" method="POST">
+                <input type="hidden" value="1" name="type">
                 <!-- left column -->
                 <div class="lc">
                     <div class="rows">
-                        <div class="title">&nbsp;</div>
-                        <select name="autoType" class="customSelect">
-                            <option value="">выберите авто...</option>
-                            <option value="1">Opel</option>
-                            <option value="2">BMW</option>
-                            <option value="3">Mercedes</option>
-                        </select>
+                        <div class="title">Автомобиль:</div>
+                        <?php showAutoSelector(); ?>
                     </div>
                     <div class="rows">
                         <div class="title mini-section">
@@ -55,18 +51,18 @@
                     <div class="rows">
                         <div class="title">Подача:</div>
                         <ul class="inline">
-                            <li class="l w50 datepicker">
-                                <input name="autoCheckIn" type="text" class="date" />
+                            <li class="l datepicker" style="width: 42%;">
+                                <input name="value3" type="text" class="date" />
                             </li>
                             <li class="r">
                                 <?php
-                                sfShowMinsSelector('autoCheckInMins');
+                                sfShowMinsSelector('minute3');
                                 ?>
                             </li>
                             <li class="r mins-sep">:</li>
                             <li class="r">
                                 <?php
-                                sfShowHoursSelector('autoCheckInHours');
+                                sfShowHoursSelector('hour3');
                                 ?>
                             </li>
                         </ul>
@@ -75,18 +71,18 @@
                     <div class="rows">
                         <div class="title">Возврат:</div>
                         <ul class="inline">
-                            <li class="l w50 datepicker">
-                                <input name="autoCheckOut" type="text" class="date" />
+                            <li class="l datepicker" style="width: 42%;">
+                                <input name="value4" type="text" class="date" />
                             </li>
                             <li class="r">
                                 <?php
-                                sfShowMinsSelector('autoCheckOutMins');
+                                sfShowMinsSelector('minute4');
                                 ?>
                             </li>
                             <li class="r mins-sep">:</li>
                             <li class="r">
                                 <?php
-                                sfShowHoursSelector('autoCheckOutHours');
+                                sfShowHoursSelector('hour4');
                                 ?>
                             </li>
                         </ul>
@@ -101,11 +97,7 @@
                         <div class="rows">
                             <div class="title">Курорт</div>
                             <div class="clear"></div>
-                            <select name="resort" class="customSelect">
-                                <option value="">выберите...</option>
-                                <option value="1">Красная Поляна</option>
-                                <option value="2">Роза Хутор</option>
-                            </select>
+                            <?php showResortsSelector(); ?>
                         </div>
                     </div>
                     <!-- hidden right column -->
@@ -139,7 +131,9 @@
                             <div class="r w50">
                                 <div class="title">Туда:</div>
                                 <div class="clear"></div>
-                                <div class="datepicker"><input name="aviaCheckIn" type="text" class="w100 date" /></div>
+                                <div class="inline">
+                                    <div class="datepicker"><input name="aviaCheckIn" type="text" class="w100 date" /></div>
+                                </div>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -150,7 +144,9 @@
                             <div class="r w50 wayback">
                                 <div class="title">Обратно:</div>
                                 <div class="clear"></div>
-                                <div class="datepicker"><input name="aviaCheckOut" type="text" class="w100 date" /></div>
+                                <div class="inline">
+                                    <div class="datepicker"><input name="aviaCheckOut" type="text" class="w100 date" /></div>
+                                </div>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -158,8 +154,8 @@
                     <div class="clear"></div>
                 </div>
 
-                <div class="l"><input type="submit" class="buttons" value="Бронировать" /></div>
-                <div class="r"><a href="">Условия бронирования</a></div>
+                <div class="l"><input type="submit" class="buttons" value="Бронировать" onclick="return submitServicesForm(0);" /></div>
+                <div class="r"><a href="http://ru.rentacarsochi.com/terms" target="_blank">Условия бронирования</a></div>
                 <div class="clear"></div>
             </form>
         </div>
@@ -171,13 +167,8 @@
                 <!-- left column -->
                 <div class="lc">
                     <div class="rows">
-                        <div class="title">&nbsp;</div>
-                        <select name="autoType" class="customSelect">
-                            <option value="">выберите авто...</option>
-                            <option value="1">Opel</option>
-                            <option value="2">BMW</option>
-                            <option value="3">Mercedes</option>
-                        </select>
+                        <div class="title">Автомобиль:</div>
+                        <?php showAutoSelector(); ?>
                     </div>
                     <div class="rows">
                         <div class="title">E-mail:</div>
@@ -198,7 +189,7 @@
                     <div class="rows">
                         <div class="title">Подача:</div>
                         <ul class="inline">
-                            <li class="l w50 datepicker">
+                            <li class="l datepicker" style="width: 42%;">
                                 <input name="autoCheckIn" type="text" class="date" />
                             </li>
                             <li class="r">
@@ -218,7 +209,7 @@
                     <div class="rows">
                         <div class="title">Возврат:</div>
                         <ul class="inline">
-                            <li class="l w50 datepicker">
+                            <li class="l datepicker" style="width: 42%;">
                                 <input name="autoCheckOut" type="text" class="date" />
                             </li>
                             <li class="r">
@@ -244,11 +235,7 @@
                         <div class="rows">
                             <div class="title">Курорт</div>
                             <div class="clear"></div>
-                            <select name="resort" class="customSelect">
-                                <option value="">выберите...</option>
-                                <option value="1">Красная Поляна</option>
-                                <option value="2">Роза Хутор</option>
-                            </select>
+                            <?php showResortsSelector(); ?>
                         </div>
                     </div>
                     <!-- hidden right column -->
@@ -277,23 +264,27 @@
                     <div class="rc">
                         <div class="rows">
                             <div class="l w50 free-checkers">
-                                <input type="radio" value="1" name="oneway" onclick="toggleWayback(0);" /><label>туда</label>
+                                <input type="radio" value="1" name="oneway" onclick="toggleWayback(1);" /><label>туда</label>
                             </div>
                             <div class="r w50">
                                 <div class="title">Туда:</div>
                                 <div class="clear"></div>
-                                <div class="datepicker"><input name="aviaCheckIn" type="text" class="w100 date" /></div>
+                                <div class="inline">
+                                    <div class="datepicker"><input name="aviaCheckIn" type="text" class="w100 date" /></div>
+                                </div>
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="rows">
                             <div class="l w50 free-checkers">
-                                <input type="radio" value="0" name="oneway" onclick="toggleWayback(0);" checked /><label>туда и обратно</label>
+                                <input type="radio" value="0" name="oneway" onclick="toggleWayback(1);" checked /><label>туда и обратно</label>
                             </div>
                             <div class="r w50 wayback">
                                 <div class="title">Обратно:</div>
                                 <div class="clear"></div>
-                                <div class="datepicker"><input name="aviaCheckOut" type="text" class="w100 date" /></div>
+                                <div class="inline">
+                                    <div class="datepicker"><input name="aviaCheckOut" type="text" class="w100 date" /></div>
+                                </div>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -302,7 +293,7 @@
                 </div>
 
                 <div class="l"><input type="submit" class="buttons" value="Бронировать" onclick="return submitServicesForm(1);" /></div>
-                <div class="r"><a href="">Условия бронирования</a></div>
+                <div class="r"><a href="http://ru.rentacarsochi.com/terms" target="_blank">Условия бронирования</a></div>
                 <div class="clear"></div>
             </form>
         </div>
@@ -311,55 +302,103 @@
         <div class="form-sections">
             <form method="POST">
                 <input name="section" value="2" type="hidden" />
+                <div>
+                    <div class="lc">
+                        <div class="rows">
+                            <div class="title">Трансфер из:</div>
+                            <?php showResortsSelector('transferFrom'); ?>
+                        </div>
+                    </div>
+                    <div class="rc">
+                        <div class="rows">
+                            <div class="title">Трансфер в:</div>
+                            <input type="text" name="transferTo" class="w100" />
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div>
+                    <div class="lc">
+                        <div class="rows">
+                            <input type="radio" value="1" name="returnTransfer" onclick="toggleReturn(2);" checked /><label>в одну сторону</label> <input type="radio" value="0" name="returnTransfer" onclick="toggleReturn(2);" /><label>+ возврат</label>
+                        </div>
+                    </div>
+                    <div class="rc">
+                        <div class="rows">
+                            <div class="title">Отправление:</div>
+                            <ul class="inline">
+                                <li class="l w50 datepicker" style="width: 42%;">
+                                    <input name="transferCheckOut" type="text" class="date" />
+                                </li>
+                                <li class="r">
+                                    <?php
+                                    sfShowMinsSelector('transferCheckOutMins');
+                                    ?>
+                                </li>
+                                <li class="r mins-sep">:</li>
+                                <li class="r">
+                                    <?php
+                                    sfShowHoursSelector('transferCheckOutHours');
+                                    ?>
+                                </li>
+                            </ul>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="returnTransfer">
+                    <div class="lc">
+                        <div class="rows">
+                            <div class="title">Трансфер из:</div>
+                            <?php showResortsSelector('transferFrom'); ?>
+                        </div>
+                    </div>
+                    <div class="rc">
+                        <div class="rows">
+                            <div class="title">Трансфер в:</div>
+                            <input type="text" name="transferTo" class="w100" />
+                        </div>
+                        <div class="rows">
+                            <div class="title">Отправление:</div>
+                            <ul class="inline">
+                                <li class="l datepicker" style="width: 42%;">
+                                    <input name="transferCheckOut" type="text" class="date" />
+                                </li>
+                                <li class="r">
+                                    <?php
+                                    sfShowMinsSelector('transferCheckOutMins');
+                                    ?>
+                                </li>
+                                <li class="r mins-sep">:</li>
+                                <li class="r">
+                                    <?php
+                                    sfShowHoursSelector('transferCheckOutHours');
+                                    ?>
+                                </li>
+                            </ul>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
                 <!-- left column -->
                 <div class="lc">
                     <div class="rows">
-                        <div class="title">Трансфер из:</div>
-                        <select name="transferFrom" class="customSelect">
-                            <option value="">выберите...</option>
-                            <option value="1">Красная Поляна</option>
-                            <option value="2">Роза Хутор</option>
-                        </select>
-                    </div>
-                    <div class="rows">
                         <div class="title">E-mail:</div>
                         <input type="text" name="email" class="w100" />
-                    </div>
-                    <div class="rows">
-                        <div class="title mini-section">
-                            Дополнительно:
-                        </div>
-                        <ul class="hidden-sections-switcher inline vert-set">
-                            <li><input type="checkbox" name="extra1" value="1" onClick="switchSFHiddenSections(2);" id="type21" /><label for="type21">прокат + отель</label> </li>
-                            <li><input type="checkbox" name="extra2" value="2" onClick="switchSFHiddenSections(2);" id="type22"><label for="type22">прокат + авиа</label></li>
-                        </ul>
                     </div>
                 </div>
                 <!-- right column -->
                 <div class="rc">
                     <div class="rows">
-                        <div class="title">Трансфер в:</div>
-                        <input type="text" name="transferTo" class="w100" />
-                    </div>
-                    <div class="rows">
-                        <div class="title">Возврат:</div>
-                        <ul class="inline">
-                            <li class="l w50 datepicker">
-                                <input name="transferCheckOut" type="text" class="date" />
-                            </li>
-                            <li class="r">
-                                <?php
-                                sfShowMinsSelector('transferCheckOutMins');
-                                ?>
-                            </li>
-                            <li class="r mins-sep">:</li>
-                            <li class="r">
-                                <?php
-                                sfShowHoursSelector('transferCheckOutHours');
-                                ?>
-                            </li>
+                        <div class="title mini-section">
+                            Дополнительно:
+                        </div>
+                        <ul class="hidden-sections-switcher inline vert-set">
+                            <li><input type="checkbox" name="extra1" value="1" onClick="switchSFHiddenSections(2);" id="type21" /><label for="type21">+ отель</label> </li>
+                            <li><input type="checkbox" name="extra2" value="2" onClick="switchSFHiddenSections(2);" id="type22"><label for="type22">+ авиабилет</label></li>
                         </ul>
-                        <div class="clear"></div>
                     </div>
                 </div>
                 <div class="clear"></div>
@@ -370,11 +409,7 @@
                         <div class="rows">
                             <div class="title">Курорт</div>
                             <div class="clear"></div>
-                            <select name="resort" class="customSelect">
-                                <option value="">выберите...</option>
-                                <option value="1">Красная Поляна</option>
-                                <option value="2">Роза Хутор</option>
-                            </select>
+                            <?php showResortsSelector(); ?>
                         </div>
                     </div>
                     <!-- hidden right column -->
@@ -389,12 +424,12 @@
                     <!-- hidden left column -->
                     <div class="lc">
                         <div class="rows">
-                            <div class="title">Перелет из:</div>
+                            <div class="title">Перелёт из:</div>
                             <div class="clear"></div>
                             <input name="aviaFrom" class="w100" type="text" />
                         </div>
                         <div class="rows">
-                            <div class="title">Перелет в:</div>
+                            <div class="title">Перелёт в:</div>
                             <div class="clear"></div>
                             <input name="aviaTo" class="w100" type="text" />
                         </div>
@@ -403,23 +438,27 @@
                     <div class="rc">
                         <div class="rows">
                             <div class="l w50 free-checkers">
-                                <input type="radio" value="1" name="oneway" onclick="toggleWayback(0);" /><label>туда</label>
+                                <input type="radio" value="1" name="oneway" onclick="toggleWayback(2);" /><label>в одну сторону</label>
                             </div>
                             <div class="r w50">
-                                <div class="title">Туда:</div>
+                                <div class="title">Вылет:</div>
                                 <div class="clear"></div>
-                                <div class="datepicker"><input name="aviaCheckIn" type="text" class="w100 date" /></div>
+                                <div class="inline">
+                                    <div class="datepicker"><input name="aviaCheckIn" type="text" class="w100 date" /></div>
+                                </div>
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="rows">
                             <div class="l w50 free-checkers">
-                                <input type="radio" value="0" name="oneway" onclick="toggleWayback(0);" checked /><label>туда и обратно</label>
+                                <input type="radio" value="0" name="oneway" onclick="toggleWayback(2);" checked /><label>+ обратно</label>
                             </div>
                             <div class="r w50 wayback">
                                 <div class="title">Обратно:</div>
                                 <div class="clear"></div>
-                                <div class="datepicker"><input name="aviaCheckOut" type="text" class="w100 date" /></div>
+                                <div class="inline">
+                                    <div class="datepicker"><input name="aviaCheckOut" type="text" class="w100 date" /></div>
+                                </div>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -428,7 +467,7 @@
                 </div>
 
                 <div class="l"><input type="submit" class="buttons" value="Бронировать" onclick="return submitServicesForm(2);" /></div>
-                <div class="r"><a href="">Условия бронирования</a></div>
+                <div class="r conditions"><a href="http://ru.rentacarsochi.com/terms" target="_blank">Условия бронирования</a></div>
                 <div class="clear"></div>
             </form>
         </div>
@@ -458,6 +497,38 @@
                 $v = $i < 10 ? '0'.$i : $i;
                 echo '<option value="'.$v.'">'.$v.'</option>';
             }
+            echo '</select>';
+        }
+    }
+
+    function showAutoSelector( $name = 'value_2' )
+    {
+        echo '
+        <select name="'.$name.'" class="customSelect">
+            <option value="0">выберите...</option>
+            <option value="52">Daewoo Matiz</option>
+            <option value="18">Chevrolet Spark</option>
+            <option value="53">Chevrolet Aveo Hatchback</option>
+            <option value="56">Chevrolet Aveo Sedan</option>
+            <option value="54">Chevrolet Cruze</option>
+            <option value="55">Chevrolet Captiva</option>
+        </select>
+        ';
+    }
+
+    function showResortsSelector( $name = 'resort' )
+    {
+        $query = Resorts::set();
+
+        $query->order = 'name ASC';
+
+        if($rows = Resorts::get($query)) {
+            echo '
+            <select name="resort" class="customSelect">
+                <option value="">выберите...</option>';
+                foreach($rows as $row) {
+                    echo '<option value="'.$row['id'].'">'.$row['name'].'</option>';
+                }
             echo '</select>';
         }
     }

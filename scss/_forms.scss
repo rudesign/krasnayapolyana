@@ -1,3 +1,13 @@
+.datepicker{
+  position: relative;
+}
+.datepicker img{
+  position: absolute;
+  z-index: 1;
+  top: 7px;
+  right: 7px;
+}
+
 .services-form label{
   position: relative;
   top: -2px;
@@ -76,8 +86,8 @@
 .services-form .inline li{
   display: inline-block;
 }
-.services-form .inline .datepicker input{
-  width: 80%;
+.services-form .datepicker input{
+  width: 100%;
   margin: 0;
 }
 .services-form .mins-sep{
