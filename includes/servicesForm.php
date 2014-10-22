@@ -321,7 +321,7 @@
                 <div>
                     <div class="lc">
                         <div class="rows">
-                            <input type="radio" value="1" name="returnTransfer" onclick="toggleReturn(2);" checked /><label>в одну сторону</label> <input type="radio" value="0" name="returnTransfer" onclick="toggleReturn(2);" /><label>+ возврат</label>
+                            <input type="radio" value="0" name="returnTransfer" onclick="toggleReturn(2);" checked /><label>в одну сторону</label> <input type="radio" value="1" name="returnTransfer" onclick="toggleReturn(2);" /><label>+ возврат</label>
                         </div>
                     </div>
                     <div class="rc">

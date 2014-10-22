@@ -110,8 +110,6 @@ class Ajaj{
                 if(empty($_POST['value4'])) throw new Error('Укажите дату возврата');
                 if(empty($_POST['email'])) throw new Error('Укажите e-mail');
                 if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) throw new Error('Укажите реальный e-mail');
-                if(empty($_POST['value3'])) throw new Error('Укажите дату подачи');
-                if(empty($_POST['value4'])) throw new Error('Укажите дату возврата');
 
             break;
             case 2:
