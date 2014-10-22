@@ -64,7 +64,7 @@ class Ajaj{
             $data[] = array('name'=>'Выбрана опция', 'value'=>'+ авиа');
             if(!empty($_POST['aviaFrom'])) $data[] = array('name'=>'Перелёт из', 'value'=>$_POST['aviaFrom']);
             if(!empty($_POST['aviaCheckIn'])) $data[] = array('name'=>'Дата перелёта', 'value'=>$_POST['aviaCheckIn']);
-            if(!empty($_POST['aviaTo'])) $data[] = array('name'=>'Перелёт в', '$_POST'=>$_POST['aviaTo']);
+            if(!empty($_POST['aviaTo'])) $data[] = array('name'=>'Перелёт в', 'value'=>$_POST['aviaTo']);
             if(!empty($_POST['aviaCheckOut'])) $data[] = array('name'=>'Дата перелёта обратно', 'value'=>$_POST['aviaCheckOut']);
         }
 
