@@ -72,9 +72,9 @@ class Ajaj{
 
         // store
         if(Feedback::submitRemote($data)){
-            $this->data['uri'] = '/';
+            $this->data['uri'] = '/sent';
         }else{
-            $this->data['uri'] = '/';
+            throw new Error('Ошибка при отправке заказа');
         }
 
 
@@ -88,8 +88,7 @@ class Ajaj{
 //        if(!ServiceQueries::create($data)) throw new Error('Ошибка при записи заявки');
 //        $theme = $_POST['name'].' отправил(а) заявку с сайта '.Core::$params['name'];
 //        if(!sendAuthEmail(Core::$params['email'], $theme, $body)) throw new Error('Ошибка при отправке сообщения');
-
-        $this->data['uri'] = '/';
+//        $this->data['uri'] = '/';
     }
 
     private function check(){
