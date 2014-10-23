@@ -7,9 +7,9 @@ if($row = Contacts::getById($id)){
     if($phones){
         foreach($phones as $index=>$phone){
             if(!$index){
-                echo '<li>Тел.: '.$phone.'</li>';
+                echo '<li>Тел.: &nbsp;'.$phone.'</li>';
             }else{
-                echo '<li style="padding-left:28px;">'.$phone.'</li>';
+                echo '<li style="padding-left:32px;">'.$phone.'</li>';
             }
         }
     }
