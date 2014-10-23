@@ -136,6 +136,7 @@ class Ajaj{
                 if(empty($_POST['value3'])) throw new Error('Укажите дату подачи');
                 if(!empty($_POST['returnTransfer'])){
                     if(empty($_POST['transferFromBack'])) throw new Error('Укажите место отправления');
+                    if(empty($_POST['transferToBack'])) throw new Error('Укажите место назначения');
                     if(empty($_POST['value4'])) throw new Error('Укажите дату подачи');
                 }
                 if(empty($_POST['email'])) throw new Error('Укажите e-mail');
