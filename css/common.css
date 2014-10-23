@@ -710,6 +710,12 @@ body {
       .hotels-teaser .more a:hover {
         border-color: transparent; }
 
+.mp-teaser {
+  width: 182px;
+  float: right; }
+  .mp-teaser img {
+    max-width: 100%; }
+
 .submenu li {
   border-bottom: 1px solid #ff8400;
   font-size: 16px;

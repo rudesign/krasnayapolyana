@@ -455,6 +455,16 @@ body{
   }
 }
 
+.mp{
+  &-teaser{
+    width: 182px;
+    float: right;
+    img{
+      max-width: 100%;
+    }
+  }
+}
+
 .submenu{
   @extend .section;
 }
