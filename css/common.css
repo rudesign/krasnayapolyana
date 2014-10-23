@@ -710,10 +710,10 @@ body {
       .hotels-teaser .more a:hover {
         border-color: transparent; }
 
-.mp-teaser {
+.mp-rc {
   width: 182px;
   float: right; }
-  .mp-teaser img {
+  .mp-rc img {
     max-width: 100%; }
 
 .submenu li {
