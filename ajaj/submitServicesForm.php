@@ -69,6 +69,7 @@ class Ajaj{
         }
 
         if(!empty($_POST['email'])) $data[] = array('name'=>'E-mail', 'value'=>$_POST['email']);
+        if(!empty($_POST['phone'])) $data[] = array('name'=>'Телефон', 'value'=>$_POST['phone']);
 
         // store
         if(Feedback::submitRemote($data)){
