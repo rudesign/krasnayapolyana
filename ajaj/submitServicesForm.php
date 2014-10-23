@@ -24,6 +24,19 @@ class Ajaj{
     private function execute(){
         $data = array();
 
+        switch($_POST['section']) {
+            case 0:
+                $data[] = array('name'=>'Тема', 'value'=>'Заявка на прокат авто');
+            break;
+            case 1:
+                $data[] = array('name'=>'Тема', 'value'=>'Заявка на аренду авто с водителем');
+            break;
+            case 2:
+                $data[] = array('name'=>'Тема', 'value'=>'Заявка на трансфер');
+            break;
+
+        }
+
         if(!empty($_POST['value_2'])){
             $auto = Autos::getById((int) $_POST['value_2'], 'remoteId');
         }
