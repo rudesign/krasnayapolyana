@@ -91,6 +91,19 @@
                     </div>
                 </div>
                 <div class="clear"></div>
+                <div class="lc">
+                    <div class="rows">
+                        <div class="title">E-mail:</div>
+                        <input type="text" name="email" class="w100" />
+                    </div>
+                </div>
+                <div class="rc">
+                    <div class="rows">
+                        <div class="title">Телефон:</div>
+                        <input type="text" name="phone" class="w100" />
+                    </div>
+                </div>
+                <div class="clear"></div>
                 <!-- hidden section 0 -->
                 <div class="hidden-sections">
                     <!-- hidden left column -->
@@ -172,10 +185,6 @@
                         <?php showAutoSelector(); ?>
                     </div>
                     <div class="rows">
-                        <div class="title">E-mail:</div>
-                        <input type="text" name="email" class="w100" />
-                    </div>
-                    <div class="rows">
                         <div class="title mini-section">
                             Дополнительно:
                         </div>
@@ -226,6 +235,19 @@
                             </li>
                         </ul>
                         <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="lc">
+                    <div class="rows">
+                        <div class="title">E-mail:</div>
+                        <input type="text" name="email" class="w100" />
+                    </div>
+                </div>
+                <div class="rc">
+                    <div class="rows">
+                        <div class="title">Телефон:</div>
+                        <input type="text" name="phone" class="w100" />
                     </div>
                 </div>
                 <div class="clear"></div>
@@ -320,6 +342,7 @@
                 </div>
                 <div>
                     <div class="lc">
+                        <div class="rows"></div>
                         <div class="rows">
                             <input type="radio" value="0" name="returnTransfer" onclick="toggleReturn(2);" checked /><label>в одну сторону</label> <input type="radio" value="1" name="returnTransfer" onclick="toggleReturn(2);" /><label>+ возврат</label>
                         </div>
@@ -394,12 +417,27 @@
                 <div class="rc">
                     <div class="rows">
                         <div class="title mini-section">
+                            Телефон:
+                        </div>
+                        <input type="text" name="phone" class="w100" />
+                    </div>
+                </div>
+                <!-- left column -->
+                <div class="lc">
+                    <div class="rows">
+                        <div class="title mini-section">
                             Дополнительно:
                         </div>
                         <ul class="hidden-sections-switcher inline vert-set">
                             <li><input type="checkbox" name="extra1" value="1" onClick="switchSFHiddenSections(2);" id="type21" /><label for="type21">+ отель</label> </li>
                             <li><input type="checkbox" name="extra2" value="2" onClick="switchSFHiddenSections(2);" id="type22"><label for="type22">+ авиабилет</label></li>
                         </ul>
+                    </div>
+                </div>
+                <!-- right column -->
+                <div class="rc">
+                    <div class="rows">
+
                     </div>
                 </div>
                 <div class="clear"></div>

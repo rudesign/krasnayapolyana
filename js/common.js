@@ -168,7 +168,7 @@ function toggleReturn(sectionIndex) {
     var returnTransfer = section.find('.returnTransfer');
     var returnBack = section.find('input[name=returnTransfer]:checked').val();
 
-    if(returnBack > 0) {
+    if(returnBack < 1) {
         returnTransfer.hide();
     }else{
         returnTransfer.show();
