@@ -134,7 +134,10 @@ class Ajaj{
                 if(empty($_POST['transferFrom'])) throw new Error('Укажите место отправления');
                 if(empty($_POST['transferTo'])) throw new Error('Укажите место назначения');
                 if(empty($_POST['value3'])) throw new Error('Укажите дату подачи');
-                if(!empty($_POST['returnTransfer']) && empty($_POST['value4'])) throw new Error('Укажите дату возврата');
+                if(!empty($_POST['returnTransfer'])){
+                    if(empty($_POST['transferFromBack'])) throw new Error('Укажите место отправления');
+                    if(empty($_POST['value4'])) throw new Error('подачи');
+                }
                 if(empty($_POST['email'])) throw new Error('Укажите e-mail');
                 if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) throw new Error('Укажите реальный e-mail');
                 if(empty($_POST['phone'])) throw new Error('Укажите номер телефона');
