@@ -351,7 +351,7 @@ body {
 .extra-section {
   margin-bottom: 40px; }
 
-.section {
+.section, .submenu {
   margin-bottom: 20px; }
 
 .mini-section {
@@ -709,9 +709,6 @@ body {
       background-position: 100% 57%; }
       .hotels-teaser .more a:hover {
         border-color: transparent; }
-
-.submenu {
-  margin-bottom: 60px; }
 
 .submenu li {
   border-bottom: 1px solid #ff8400;

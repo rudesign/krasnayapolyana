@@ -456,7 +456,7 @@ body{
 }
 
 .submenu{
-  margin-bottom: 60px;
+  @extend .section;
 }
 .submenu li{
   border-bottom: 1px solid #ff8400;
