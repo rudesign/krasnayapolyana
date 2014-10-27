@@ -1,5 +1,4 @@
 <?php
-
 header("Content-type: text/html; charset=utf-8");
 
 // app's server root dir
@@ -41,6 +40,8 @@ try {
     ));
 
     echo Templates::parse('baseWrapper');
+
+    echo '---';
 
 } catch (Error $e) {
     error($e);
