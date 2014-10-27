@@ -41,7 +41,7 @@ try {
 
     echo Templates::parse('baseWrapper');
 
-    echo '---';
+    echo '----';
 
 } catch (Error $e) {
     error($e);
