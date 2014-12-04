@@ -22,8 +22,8 @@ class Ajaj{
         $data = array();
 
         $data[] = array('name'=>'Тема', 'value'=>'Просьба позвонить');
-        if(!empty($_POST['peopleTotal'])) $data[] = array('name'=>'Имя', 'value'=>$_POST['name']);
-        if(!empty($_POST['peopleTotal'])) $data[] = array('name'=>'Номер телефона', 'value'=>$_POST['phone']);
+        if(!empty($_POST['name'])) $data[] = array('name'=>'Имя', 'value'=>$_POST['name']);
+        if(!empty($_POST['phone'])) $data[] = array('name'=>'Номер телефона', 'value'=>$_POST['phone']);
 
         // store
         if(Feedback::submitRemote($data)){

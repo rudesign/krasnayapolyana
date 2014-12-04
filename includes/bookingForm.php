@@ -47,7 +47,7 @@ echo '
                                 echo '
                             </select>
                         </div>
-                        <div class="r" style="margin: 3px 5px 0 0;">Номеров:</div>
+                        <div class="r" style="margin: 7px 5px 0 0;">Номеров:</div>
                     </div>
                 </div>
             </div>

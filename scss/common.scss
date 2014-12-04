@@ -283,50 +283,6 @@ body{
   -moz-box-shadow: 0 1px 1px #009fcb;
 }
 
-.through-teaser .callback-form{
-  display: none;
-  width: 258px;
-  height: 218px;
-  padding: 70px 15px 0 15px;
-  margin: 0 auto;
-  background-image: url("../img/callbackForm.png");
-  background-repeat: no-repeat;
-}
-.through-teaser .callback-form input{
-  margin-bottom: 0;
-}
-.through-teaser .callback-form input[type="text"]{
-  width: 100%;
-  text-align: left;
-}
-.through-teaser .callback-form .table{
-  width: 215px;
-}
-.through-teaser .callback-form .td{
-  padding-bottom: 10px;
-}
-.through-teaser .callback-form .tr .td:first-child{
-  width: 45px;
-  padding-right: 5px;
-  text-align: right;
-}
-.through-teaser .callback-form .captcha .td{
-  padding-right: 17px;
-}
-.through-teaser .callback-form .captcha .td:last-child{
-  padding-right: 0;
-}
-.through-teaser .callback-form button{
-  padding-left: 10px;
-  padding-right: 10px;
-  background-color: #ff8400;
-  box-shadow: 0 1px 1px #e17400;
-  -moz-box-shadow: 0 1px 1px #e17400;
-}
-.through-teaser .callback-form button:hover{
-  background-color: #e17400;
-}
-
 .menu{
   margin-top: 10px;
   font-size: 16px;

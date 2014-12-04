@@ -3,7 +3,7 @@
 if(!empty(Core::$item)){
 
     if(Core::$item['template'] && !$noRecurcy){
-        echo Templates::parse(Core::$item['template']);
+        echo Templates::parse(decodeHTMLEntities(Core::$item['template']));
     }else{
         echo Templates::parse('innerText');
     }
