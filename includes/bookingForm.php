@@ -30,7 +30,7 @@ echo '
                         <div class="l">
                             <select name="peopleTotal" class="customSelect">
                                 <option value="0"></option>';
-                                for($i=1; $i<=7; $i++){
+                                for($i=1; $i<=8; $i++){
                                     echo '
                                     <option value="'.$i.'">'.$i.'</option>';
                                 }
@@ -40,7 +40,7 @@ echo '
                         <div class="r tar">
                             <select name="rooms" class="r customSelect">
                                 <option value="0"></option>';
-                                for($i=1; $i<=4; $i++){
+                                for($i=1; $i<=5; $i++){
                                     echo '
                                     <option value="'.$i.'">'.$i.'</option>';
                                 }

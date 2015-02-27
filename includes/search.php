@@ -42,7 +42,7 @@ class Search{
 
             $pos = strpos($string, $this->query);
             if($pos >= 60){ $pos = 60; }else{ $pos = 0; }
-            $snippet = mb_substr($string, $pos, 200);
+            $snippet = mb_substr($string, $pos, 200, 'utf-8');
             $snippet = str_replace($this->query, '<b>'.$this->query.'</b>', $snippet);
 
             return $snippet;
@@ -54,7 +54,7 @@ class Search{
     private function displayResults($rows = array(), $baseUri = '', $description = ''){
         if(!empty($rows)){
             foreach($rows as $row){
-                $uri = $baseUri.$row['id'].'.html';
+                $uri = $baseUri.$row['alias'].'.html';
 
 
                 if(!$this->i) echo '<div class="small section">По запросу <b class="arial i">'.$this->query.'</b> найдено:</div>';

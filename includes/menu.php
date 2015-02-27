@@ -19,6 +19,17 @@ class mmenu{
         }
     }
 
+    /*
+     *
+     *              <ul class="menu_header clearfix">
+                        <li class="active_mnh"><a href="#">Об отеле</a></li>
+                        <li><a href="#">Цены и туры</a></li>
+                        <li><a href="#">Номера</a></li>
+                        <li><a href="#">Бизнес-туризм</a></li>
+                        <li><a class="dp_width" href="#">Бронирование</a></li>
+                    </ul><!--menu_header-->
+     */
+
     public function show(){
         if(array_key_exists($this->parent, $this->structure)){
             echo '<div class="black menu section">';
