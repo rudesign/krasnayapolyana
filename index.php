@@ -21,8 +21,11 @@ try {
         APP_PATH.'/js/jquery-ui/jquery-ui-1.10.3.custom.min.css',
         APP_PATH.'/js/customSelect/style.css',
         APP_PATH.'/js/fancybox/source/jquery.fancybox.css',
-        APP_PATH.'/css/common.css?v='.Settings::$data->version,
+        APP_PATH.'/css/common.css?v='.Settings::$data->version
+        ,
     ));
+
+    if(isSummer()) Templates::$css[] = APP_PATH.'/css/summer.css?v='.Settings::$data->version;
 
     Templates::$js = array_merge(Templates::$js, array(
         'http://www.skypeassets.com/i/scom/js/skype-uri.js'

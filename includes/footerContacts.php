@@ -14,7 +14,7 @@ if($row = Contacts::getById($id)){
         }
     }
     echo ($row['fax'] ? '<li>Факс: '.$row['fax'].'</li>' : '').'
-    <li class="inline-icons">'.($row['icq'] ? '<i class="icq"></i><span>'.$row['icq'].'</span>' : '')
-        .($row['skype'] ? '<a href="skype:'.$row['skype'].'?call" onclick="Skype.tryAnalyzeSkypeUri(\'call\', 0);"><i class="skype" id="BSkypeButton'.$row['id'].'"></i></a><span class="skype-addr">'.$row['skype'].'</span>' : '').'</li>';
+    <li class="inline-icons">'.($row['icq'] ? '<span>ICQ: '.$row['icq'].'</span>' : '')
+        .($row['skype'] ? '<span>Skype: '.$row['skype'].'</span>' : '').'</li>';
 }
 ?>

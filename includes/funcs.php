@@ -776,4 +776,16 @@ function getAge($birthTime = 0){
         return 0;
     }
 }
-?>
+
+
+function isSummer(){
+    try{
+        $month = date('n');
+
+        $isSummer = ((($month >= 1) && ($month < 5)) || (($month <= 12) && ($month >= 11))) ? false : true;
+
+        return $isSummer;
+    }catch (\Exception $e){
+        return false;
+    }
+}

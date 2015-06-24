@@ -1,0 +1,118 @@
+$green: #8ac200;
+
+a, h1, h2, .blue{
+  color: $green;
+}
+
+.blue-bg{
+  background-color: $green;
+}
+
+body{
+  background: url("../img/summer/bg.jpg") #fff;
+}
+
+.inline-icons{
+  i{
+    background-image: url("../img/summer/im.png");
+    background-repeat: no-repeat;
+  }
+}
+
+.through-teaser{
+  background-image: url("../img/summer/mpTeaser.jpg");
+  button{
+    background-color: $green;
+    box-shadow: none;
+    &:hover{
+      background-color: lighten($green, 3%);
+    }
+  }
+  .search-form{
+    background-image: url("../img/summer/searchForm.png");
+  }
+  .social {
+    a{
+      background-image: url("../img/summer/social1.png");
+    }
+  }
+}
+
+.menu{
+  display: table;
+  width: 100%;
+  a{
+    display: table-cell;
+    width: 16.666%;
+    padding: 0 10px;
+    border: none;
+    span{
+      display: block;
+      padding: 10px 0;
+      border-top: 2px #ccc solid;
+      text-align: center;
+    }
+    &.active, &:hover{
+      color: $green;
+      span{
+        border-color: $green;
+      }
+    }
+  }
+}
+
+.hotels-teaser{
+  background-color: #99c800;
+  .title{
+    background-color: darken(#99c800, 5%);
+  }
+  .item1{
+    background-color: #7db901;
+    .title{
+      background-color: darken(#7db901, 5%);
+    }
+  }
+  .item2{
+     background-color: #60a900;
+    .title{
+      background-color: darken(#60a900, 5%);
+    }
+   }
+}
+
+.content-h{
+  border-color: $green;
+  border-width: 7px;
+}
+
+.rating-submenu{
+  background: $green;
+  li{
+    border-bottom-color: lighten($green, 3%);
+    &.active, ul{
+      background-color: lighten($green, 3%);
+      li{
+        &:hover{
+          background-color: lighten($green, 5%);
+        }
+      }
+    }
+  }
+}
+
+.footer{
+  padding-bottom: 24px;
+  background: url("../img/summer/footer.jpg") no-repeat #108d01;
+  > div{
+    padding-bottom: 0;
+  }
+  .logo{
+    a{
+      background-image: url("../img/summer/footerLogo.png");
+    }
+  }
+}
+
+.customSelect {
+  background-image: url("../img/summer/select-box-bg.gif");
+}
