@@ -39,19 +39,7 @@ body{
 }
 
 .menu{
-  display: table;
-  width: 100%;
   a{
-    display: table-cell;
-    width: 16.666%;
-    padding: 0 10px;
-    border: none;
-    span{
-      display: block;
-      padding: 10px 0;
-      border-top: 2px #ccc solid;
-      text-align: center;
-    }
     &.active, &:hover{
       color: $green;
       span{
@@ -110,6 +98,12 @@ body{
     a{
       background-image: url("../img/summer/footerLogo.png");
     }
+  }
+}
+
+.photo-gallery-teaser {
+  .jcarousel-controls{
+    background-image: url("../img/summer/shift.png");
   }
 }
 

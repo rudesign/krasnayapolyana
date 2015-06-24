@@ -631,6 +631,24 @@ body {
   color: #0096ff;
   border-color: #0096ff; }
 
+.menu {
+  display: table;
+  width: 100%; }
+  .menu a {
+    display: table-cell;
+    width: 16.666%;
+    padding: 0 10px;
+    border: none; }
+    .menu a span {
+      display: block;
+      padding: 10px 0;
+      border-top: 2px #ccc solid;
+      text-align: center; }
+    .menu a.active, .menu a:hover {
+      color: #0096ff; }
+      .menu a.active span, .menu a:hover span {
+        border-color: #0096ff; }
+
 .white-rating span {
   display: inline-block;
   width: 17px;

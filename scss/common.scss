@@ -308,6 +308,29 @@ body{
   border-color: #0096ff;
 }
 
+.menu{
+  display: table;
+  width: 100%;
+  a{
+    display: table-cell;
+    width: 16.666%;
+    padding: 0 10px;
+    border: none;
+    span{
+      display: block;
+      padding: 10px 0;
+      border-top: 2px #ccc solid;
+      text-align: center;
+    }
+    &.active, &:hover{
+      color: #0096ff;
+      span{
+        border-color: #0096ff;
+      }
+    }
+  }
+}
+
 .white-rating span{
   display: inline-block;
   width: 17px;
