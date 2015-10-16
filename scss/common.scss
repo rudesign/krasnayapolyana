@@ -4,6 +4,10 @@
 @import "typo";
 @import "forms";
 
+.kat .hidden{
+  display: none;
+}
+
 body{
   background-image: url("../img/body.png");
   background-color: #e3e3e3;

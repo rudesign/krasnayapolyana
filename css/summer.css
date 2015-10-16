@@ -1,6 +1,9 @@
 a, h1, h2, .blue {
   color: #8ac200; }
 
+.kat .hidden {
+  display: none; }
+
 .blue-bg {
   background-color: #8ac200; }
 

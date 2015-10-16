@@ -3,6 +3,8 @@ $(document).ready(function(){
 
     initFancybox();
 
+    initKat();
+
     $( ".datepicker .date" ).datepicker({
         showOn: "button",
         buttonImage: "/img/datepicker.png",
@@ -28,6 +30,33 @@ $(document).ready(function(){
     $('.returnTransfer').hide();
 
 });
+
+function initKat(){
+    var containers = $('.kat');
+    var openLnk, content, visible;
+
+    containers.each(function(){
+
+        openLnk = $(this).find('> a');
+
+
+        openLnk.click(function(e){
+            e.preventDefault();
+
+            content =  $(this).parent().find('> .hidden');
+
+            visible = content.eq(0).css('display');
+
+            if(visible == 'block'){
+                content.hide();
+            }else{
+                content.show();
+            }
+
+            return false;
+        });
+    });
+}
 
 
 function runCarousel(){
